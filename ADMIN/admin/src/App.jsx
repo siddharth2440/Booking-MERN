@@ -7,9 +7,10 @@ import Users from './pages/Users.jsx'
 import NewUser from './pages/NewUser.jsx'
 import {userColumns,hotelColumns} from "./tempData/data.table.js"
 import {Routes,Route} from "react-router-dom"
+import NewHotel from './pages/NewHotel.jsx'
 
 
-function App() {
+function App() {  
 
   return (
     <div>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/userProfile" element={<UserProfile/>}></Route>
           <Route path='/newUser' element={<NewUser/>}></Route>
           <Route path="/hotels" element={<Users columns={hotelColumns} type={"hotels"}/>}></Route>
+          <Route path="/newHotel" element={<NewHotel/>}></Route>
       </Routes>
     </div>
   )

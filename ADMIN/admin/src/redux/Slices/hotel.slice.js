@@ -15,6 +15,11 @@ export const deleteHotel = createAsyncThunk("/hotel/delete",async ({userId})=>{
     return;
 })
 
+export const createNewHotel = createAsyncThunk("/hotel/create",async({photos:list,name,address,city,distance,type,description,title,cheapestPrice,featured,rating})=>{
+    const createHotel =await axiosInstance.post("/hotels",{photos:list,name,address,city,distance,type,description,title,cheapestPrice,featured,rating})
+    return;
+});
+
 const hotelSlice = createSlice({
     name:"hotels",
     initialState,

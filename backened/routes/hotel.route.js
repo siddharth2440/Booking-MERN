@@ -4,7 +4,8 @@ import {isLoggedIn,authorizedRoles} from "../middlewares/auth.middleware.js"
 const router = Router();
 
 //create Hotel
-router.post('/',isLoggedIn,authorizedRoles("ADMIN"),createHotel);
+// router.post('/',isLoggedIn,authorizedRoles("ADMIN"),createHotel);
+router.post('/',createHotel);
 
 //update Hotel
 router.put('/:id',isLoggedIn,authorizedRoles("ADMIN"),updateHotel)
