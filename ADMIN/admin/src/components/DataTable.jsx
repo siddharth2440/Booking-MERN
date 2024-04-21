@@ -27,7 +27,7 @@ const DataTable = ({columns,type}) => {
                 toast.error("Unable to delete the User");
                 return
             }
-            navigate("/");
+            navigate("/dashboard");
             toast.success("Deleted Successfully");
             return;
         }else if(type=="hotels"){
@@ -36,7 +36,7 @@ const DataTable = ({columns,type}) => {
                 toast.error("Unable to delete the Hotel");
                 return
             }
-            navigate("/");
+            navigate("/dashboard");
             toast.success("Deleted Successfully");
             return
         }

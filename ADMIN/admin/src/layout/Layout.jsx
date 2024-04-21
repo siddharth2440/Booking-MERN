@@ -4,7 +4,15 @@ import {TbTruckDelivery,TbCreditCard,TbHealthRecognition,TbPhysotherapist,TbSett
 import {AiOutlineUserSwitch,AiFillProfile,AiOutlineLogout} from "react-icons/ai"
 import {BiSolidDashboard,BiStore,BiStats,BiNotification} from "react-icons/bi"
 import {Link} from "react-router-dom"
+import { useDispatch } from 'react-redux'
+import { logout } from '../redux/Slices/authSlice.js'
 const Layout = ({children}) => {
+    const dispatch = useDispatch();
+    const logoutHandler =async ()=>{
+        const dispatcher = await dispatch(logout())
+        if(!dispatcher) return;
+        navigate("/");
+    }
   return (
     <div className='grid grid-cols-[20%,80%]'>
         <div className="sideBar sticky top-0 border-r-4 min-h-screen flex flex-col items-start justify-evenly gap-2 py-2 px-6">
@@ -14,7 +22,7 @@ const Layout = ({children}) => {
                 <h2 className='text-[0.9rem] font-[500] opacity-80 cursor-pointer'>MAIN</h2>
                 <div className='flex items-center justify-center gap-2 cursor-pointer'>
                     <BiSolidDashboard className='text-[1.4rem] text-blue-700'/>
-                    <Link to={"/"}><h3 className='text-[1.2rem] font-[500]'>Dashboard</h3></Link>
+                    <Link to={"/dashboard"}><h3 className='text-[1.2rem] font-[500]'>Dashboard</h3></Link>
                 </div>
             </div>
 
@@ -84,7 +92,7 @@ const Layout = ({children}) => {
 
                 <div className='flex items-center justify-center gap-2 cursor-pointer'>
                     <AiOutlineLogout className='text-[1.4rem] text-blue-700'/>
-                    <h3 className='text-[1.2rem] font-[500]'>Logout</h3>
+                    <button className='text-[1.2rem] font-[500]' onClick={logoutHandler}>Logout</button>
                 </div>
             </div>
 

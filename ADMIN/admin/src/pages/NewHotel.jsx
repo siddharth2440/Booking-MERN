@@ -41,7 +41,7 @@ const NewHotel = () => {
             return
         }
         toast.success("Hotel CreateD Successfully");
-        navigate("/");
+        navigate("/dashboard");
         return;
     }
   return (

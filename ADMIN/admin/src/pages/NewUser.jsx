@@ -31,7 +31,7 @@ const NewUser = () => {
       }
       else{
         toast.success("Registered Successfully");
-        navigate("/");
+        navigate("/dashboard");
         return;
       }
 
